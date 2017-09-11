@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@color/white">
+    <TextView 
+        android:id="@+id/tv_connect_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/selector_connect_bt"
+        android:textColor="#ffffffff"
+        android:text="还未连接蓝牙，点击连接  >>"/>
+    <FrameLayout
+       	android:id="@+id/tab_content"
+     	android:layout_width="fill_parent"
+      	android:layout_height="0dp"
+       	android:layout_weight="1.0"
+       	android:background="@color/white"/>
+    <RadioGroup
+            android:id="@+id/tabs_radio_group"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <RadioButton
+                android:id="@+id/tab_rb_more"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/action_dsp_settings"
+                android:button="@null"
+                android:text="调试"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:singleLine="true"
+                android:checked="true"
+                android:background="@drawable/selector_tab_background"/>
+        <RadioButton
+                android:id="@+id/tab_rb_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/tab_more_content"
+                android:button="@null"
+                android:text="功能"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:singleLine="true"
+                
+                android:background="@drawable/selector_tab_background"/>
+                
+    </RadioGroup>
+
+</LinearLayout>

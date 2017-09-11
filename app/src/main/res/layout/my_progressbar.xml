@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+ 	 android:layout_height="wrap_content" 
+	 android:layout_width="250dp"
+	 android:background="@color/white">
+	 <LinearLayout
+	     android:layout_centerHorizontal="true"
+		 android:layout_centerInParent="true"
+	 	 android:layout_height="wrap_content" 
+		 android:layout_width="fill_parent"
+		 android:orientation="vertical">
+	<LinearLayout
+	 	 android:layout_height="fill_parent" 
+		 android:layout_width="fill_parent"
+		 android:background="#45aaff"
+		 android:orientation="vertical">
+	 <TextView
+	    android:layout_margin="5dp"
+	    android:id="@+id/title_text_view"
+	  	android:layout_height="wrap_content" 
+	 	android:layout_width="wrap_content"
+	 	android:layout_gravity="center_horizontal"
+	 	android:gravity="center_horizontal"
+	 	android:textColor="@color/black"
+	 	android:visibility="gone"/>
+	 </LinearLayout>
+	<ProgressBar
+	    android:layout_margin="20dp"
+		android:id="@+id/update_progress"   
+		android:layout_width="fill_parent"
+		android:layout_height="5dp"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:progressDrawable="@drawable/progressbar_layer_list"
+		android:background="@drawable/progressbar_bg"
+		android:max="100"  
+        android:progress="0"/> 
+	 <LinearLayout
+	     android:id="@+id/linear_layout"
+	    android:layout_height="wrap_content" 
+	 	android:layout_width="wrap_content"
+	 	android:orientation="horizontal"
+	 	android:paddingTop="5dp"
+	 	android:layout_gravity="center_horizontal"
+	 	android:gravity="center_horizontal">
+	 
+		 <!-- 确认按钮 >
+		 <Button 
+			style="@style/ButtonStyle"
+			android:layout_width="100dp"
+			android:id="@+id/btn_ok" 
+			android:background="@drawable/selector_button"
+			android:visibility="gone"/-->
+		 
+		 <!-- 取消按钮 -->
+		 <Button 
+		    style="@style/ButtonStyle"
+		  	android:id="@+id/btn_cancel" 
+		  	android:layout_width="180dp"
+		  	android:background="@drawable/selector_button"
+		  	android:visibility="gone"/>
+	 </LinearLayout>
+	 </LinearLayout>
+</RelativeLayout>
