@@ -5,6 +5,7 @@ import com.kidil.kibot.activity.MainActivity;
 import com.kidil.kibot.activity.MainActivity.OnMessageListener;
 import com.kidil.kibot.comm.OutputPacket;
 import com.kidil.kibot.utils.Constants;
+import com.kidil.kibot.utils.LogUtils;
 import com.kidil.kibot.utils.SdcardUtils;
 import com.kidil.kibot.view.LogLevelSelectView;
 
@@ -196,7 +197,8 @@ public class FragmentOneKey extends Fragment implements OnClickListener, OnMessa
 		switch(msg.what){
 			case Constants.MESSAGE_RECV:{
 				byte[] frame = (byte[]) msg.obj;
-				String log = new String(frame);
+				String log = new String(frame).trim();
+				LogUtils.logString(log);
 				if(log.contains("[INFO]") && log.contains("battery")){
 					String[] strings = log.split("=");
 					batteryTextView.setText(strings[1].trim());
@@ -204,16 +206,18 @@ public class FragmentOneKey extends Fragment implements OnClickListener, OnMessa
 				else if(log.contains("p = ") && log.contains("i = ") && log.contains("d = ")){
 					String[] strings = log.split(" = ");
 //					String d = strings[3].substring(strings[3].length() - 2);
-					String d = strings[3].substring(0, strings[3].length() - 4);
+					String d = strings[3].substring(0, strings[3].length() - 3);
+					LogUtils.logString(strings[3]);
 					pEditText.setText(strings[1].trim().split(",")[0]);
 					iEditText.setText(strings[2].trim().split(",")[0]);
-					dEditText.setText(d);
+					dEditText.setText(d.trim());
 				}
 				else if(log.contains("encryption key = ")){
 					String[] strings = log.split(" = ");
 					String[] encryption = strings[1].trim().split(",");
+					LogUtils.logString(encryption[1]);
 					String encryption_key0 = encryption[0];
-					String encryption_key1 = encryption[1].substring(0, encryption[1].length() - 4);
+					String encryption_key1 = encryption[1].substring(0, encryption[1].length() - 3);
 					new SdcardUtils().saveEncryption(encryption_key1);
 					encrypt1EditText.setText(encryption_key0);
 					encrypt2EditText.setText(encryption_key1);
