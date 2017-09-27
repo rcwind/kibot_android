@@ -260,7 +260,7 @@ public class FragmentOneKey extends Fragment implements OnClickListener, OnMessa
 					Toast.makeText(context, "参数为空", Toast.LENGTH_SHORT).show();
 					return;
 				}
-				MainActivity.bluetoothCommService.addPacket(new OutputPacket("setpid="+p+" "+i+" "+d));
+				MainActivity.bluetoothCommService.addPacket(new OutputPacket("setpid "+p+" "+i+" "+d));
 				break;
 			case R.id.get_encrypt_btn:
 				MainActivity.bluetoothCommService.addPacket(new OutputPacket("getencrypt"));
