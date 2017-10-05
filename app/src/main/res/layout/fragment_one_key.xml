@@ -75,12 +75,13 @@
 					android:padding="5dp"
 					android:text="次"
 					android:textColor="@color/black"/>
+
 			<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:padding="5dp"
-					android:text="持续"
-					android:textColor="@color/black" />
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="5dp"
+				android:text="间隔"
+				android:textColor="@color/black" />
 			<EditText
 					android:id="@+id/buzzer_time_et"
 					android:layout_weight="1"

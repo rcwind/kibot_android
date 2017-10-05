@@ -152,9 +152,9 @@ public class FragmentDebug extends Fragment implements OnClickListener, OnMessag
 //				if (log.contains("\033["))
 				String prompt1 = "[kidil ~$] ";
 				String prompt2 = "\033[2K\r";
-				if (log.startsWith(prompt1)){
-					log = log.substring(prompt1.length(), log.length());
-				}
+//				if (log.startsWith(prompt1)){
+//					log = log.substring(prompt1.length(), log.length());
+//				}
 				if (log.startsWith(prompt2)){
 					log = log.substring(prompt2.length(), log.length());
 				}
@@ -164,6 +164,10 @@ public class FragmentDebug extends Fragment implements OnClickListener, OnMessag
 					log += "\r\n";
 				}
 				else if (log.startsWith("\033[0;3")){
+					log = log.substring(7, log.length() - 5);
+					log += "\r\n";
+				}
+				else if (log.startsWith("\033[1;3")){
 					log = log.substring(7, log.length() - 5);
 					log += "\r\n";
 				}

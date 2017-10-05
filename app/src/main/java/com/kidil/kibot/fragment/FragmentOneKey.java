@@ -215,10 +215,10 @@ public class FragmentOneKey extends Fragment implements OnClickListener, OnMessa
 				else if(log.contains("encryption key = ")){
 					String[] strings = log.split(" = ");
 					String[] encryption = strings[1].trim().split(",");
+                    new SdcardUtils().saveEncryption(strings[1].trim());
 					LogUtils.logString(encryption[1]);
 					String encryption_key0 = encryption[0];
 					String encryption_key1 = encryption[1].substring(0, encryption[1].length() - 3);
-					new SdcardUtils().saveEncryption(encryption_key1);
 					encrypt1EditText.setText(encryption_key0);
 					encrypt2EditText.setText(encryption_key1);
 				}

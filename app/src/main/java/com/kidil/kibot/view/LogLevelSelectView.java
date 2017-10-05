@@ -18,7 +18,7 @@ public class LogLevelSelectView extends View{
 	private String level = null;
 	AlertDialog dialog;
 	private final String[] logLevel = new String[] {
-		    "debug", "info", "warn", "error", "fatal", "at"
+		    "debug", "info", "warn", "error", "cmd"
 		    };
 	public LogLevelSelectView(Context context) {
 		super(context);
